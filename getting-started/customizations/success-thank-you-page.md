@@ -19,8 +19,17 @@ You might have noticed, after successful form submission, the user will show suc
 ```html
 <script>
     window.onload = function() {
-        // Reset the form fields when the page loads
-        document.getElementById("form").reset();
+     
+        var form = document.getElementById("form");
+        if(form) form.reset();
+        
+       
+        var successMsg = document.querySelector('.w-form-done');
+        if(successMsg) {
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 3000);
+        }
     };
 </script>
 ```
